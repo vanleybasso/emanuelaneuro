@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  --primary: #6a7d9b;
+  --secondary: #c9b28d;
+  --dark: #323c4d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .btn-primary {
+    @apply bg-[#6a7d9b] hover:bg-[#5a6d8b] text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-[#c9b28d] hover:bg-[#b9a27d] text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
+  }
+
+  .text-primary {
+    @apply text-[#6a7d9b];
+  }
+
+  .text-secondary {
+    @apply text-[#c9b28d];
+  }
+
+  .text-dark {
+    @apply text-[#323c4d];
+  }
+
+  .bg-primary {
+    @apply bg-[#6a7d9b];
+  }
+
+  .bg-secondary {
+    @apply bg-[#c9b28d];
+  }
+
+  .bg-dark {
+    @apply bg-[#323c4d];
+  }
+}
