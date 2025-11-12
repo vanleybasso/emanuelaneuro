@@ -38,7 +38,7 @@ const About: React.FC = () => {
                   <span className="text-primary"> Humanizada</span>
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Com mais de 8 anos de experiência em neuropsicopedagogia, 
+                  Com mais de 8 anos de experiência na área da educação e saúde, 
                   ofereço mentorias que unem o rigor científico à sensibilidade 
                   necessária para atuar com diversidades de aprendizagem.
                 </p>

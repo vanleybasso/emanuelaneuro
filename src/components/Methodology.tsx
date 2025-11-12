@@ -1,178 +1,152 @@
 import React from 'react';
-import { FaWhatsapp, FaHandshake, FaCalendarCheck, FaRocket, FaComments, FaUserCheck, FaChartLine, FaStar } from 'react-icons/fa';
+import { FaBrain, FaHeart, FaBook, FaTools, FaGraduationCap, FaHandshake } from 'react-icons/fa';
 
 const Methodology: React.FC = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const steps = [
-    {
-      icon: FaWhatsapp,
-      title: "Conversa Inicial",
-      description: "Um bate-papo descontraído para conhecer seus objetivos e desafios atuais",
-      duration: "20-30 min",
-      color: "primary",
-      features: ["Sem compromisso", "Alinhamento total", "Dúvidas iniciais"]
-    },
-    {
-      icon: FaHandshake,
-      title: "Plano Personalizado",
-      description: "Juntos criamos um roadmap exclusivo para sua evolução profissional",
-      duration: "Sob medida",
-      color: "secondary",
-      features: ["Metas claras", "Cronograma flexível", "Foco nos seus objetivos"]
-    },
-    {
-      icon: FaCalendarCheck,
-      title: "Mentoria Prática",
-      description: "Sessões semanais com cases reais e aplicação imediata do conteúdo",
-      duration: "1h30/semana",
-      color: "primary",
-      features: ["Casos reais", "Aplicação prática", "Feedback constante"]
-    },
-    {
-      icon: FaRocket,
-      title: "Implementação",
-      description: "Acompanhamento contínuo para garantir resultados tangíveis",
-      duration: "Suporte total",
-      color: "secondary",
-      features: ["WhatsApp direto", "Ajustes em tempo real", "Resultados mensuráveis"]
-    }
-  ];
-
   return (
-    <section id="metodologia" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section id="metodologia" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-primary/5">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          
-          {/* Header Impactante */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 shadow-lg mb-6 border border-gray-200">
-              <FaStar className="text-secondary text-xl" />
-              <span className="text-dark font-semibold">Método Comprovado</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-dark mb-6">
-              Como vamos 
-              <span className="text-primary"> trabalhar juntos</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
+              Minha 
+              <span className="text-primary"> Metodologia</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Um processo estruturado em 4 etapas simples para sua evolução profissional 
-              na neuropsicopedagogia
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Integrando ciência, prática clínica e olhar humanizado para 
+              transformar conhecimento em ação
             </p>
           </div>
 
-          {/* Grid de Etapas - 2 por linha no mobile, 4 no desktop */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {steps.map((step, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:-translate-y-2 border border-gray-100 group"
-              >
-                {/* Número e Ícone */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`text-3xl font-bold ${
-                    step.color === 'primary' ? 'text-primary' : 'text-secondary'
-                  } opacity-20 group-hover:opacity-100 transition-all duration-300`}>
-                    {index + 1}
-                  </div>
-                  <div className={`${
-                    step.color === 'primary' ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'
-                  } rounded-xl p-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <step.icon className="text-2xl" />
-                  </div>
-                </div>
-
-                {/* Conteúdo */}
-                <h3 className="text-xl font-bold text-dark mb-4 leading-tight">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {step.description}
-                </p>
-
-                {/* Duração */}
-                <div className={`inline-block ${
-                  step.color === 'primary' ? 'bg-primary/5 text-primary' : 'bg-secondary/5 text-secondary'
-                } rounded-full px-4 py-2 text-sm font-semibold mb-6`}>
-                  {step.duration}
-                </div>
-
-                {/* Features */}
-                <div className="space-y-3">
-                  {step.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-3">
-                      <div className={`w-2 h-2 rounded-full ${
-                        step.color === 'primary' ? 'bg-primary' : 'bg-secondary'
-                      }`}></div>
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+          {/* Pilares da Metodologia */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="bg-white rounded-xl p-6 text-center shadow-lg hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaBrain className="text-2xl text-primary" />
               </div>
-            ))}
-          </div>
+              <h3 className="font-bold text-dark mb-3 text-lg">Fundamentação Teórica Sólida</h3>
+              <p className="text-gray-600 text-sm">
+                Baseada na Neuropsicopedagogia, ABA, Funções Executivas e Transtornos do Neurodesenvolvimento
+              </p>
+            </div>
 
-          {/* Diferenciais em Destaque */}
-          <div className="bg-dark rounded-2xl p-8 md:p-12 text-white mb-16">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <FaComments className="text-3xl text-secondary mx-auto mb-4" />
-                <h4 className="font-bold text-lg mb-3">Comunicação Direta</h4>
-                <p className="text-white/80 text-sm">
-                  WhatsApp exclusivo para tirar dúvidas entre as sessões
-                </p>
+            <div className="bg-white rounded-xl p-6 text-center shadow-lg hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaBook className="text-2xl text-secondary" />
               </div>
-              <div className="text-center">
-                <FaUserCheck className="text-3xl text-secondary mx-auto mb-4" />
-                <h4 className="font-bold text-lg mb-3">100% Personalizado</h4>
-                <p className="text-white/80 text-sm">
-                  Conteúdo adaptado à sua realidade e objetivos específicos
-                </p>
+              <h3 className="font-bold text-dark mb-3 text-lg">Reflexão sobre a Prática</h3>
+              <p className="text-gray-600 text-sm">
+                Compreensão do porquê das escolhas clínicas e transformação da teoria em intervenção efetiva
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 text-center shadow-lg hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaTools className="text-2xl text-primary" />
               </div>
-              <div className="text-center">
-                <FaChartLine className="text-3xl text-secondary mx-auto mb-4" />
-                <h4 className="font-bold text-lg mb-3">Resultados Reais</h4>
-                <p className="text-white/80 text-sm">
-                  Métricas claras para acompanhar seu desenvolvimento
-                </p>
+              <h3 className="font-bold text-dark mb-3 text-lg">Ferramentas Aplicáveis</h3>
+              <p className="text-gray-600 text-sm">
+                Protocolos, modelos de anamnese, instrumentos avaliativos e relatórios adaptáveis
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 text-center shadow-lg hover:transform hover:scale-105 transition-all duration-300">
+              <div className="bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaHeart className="text-2xl text-secondary" />
               </div>
+              <h3 className="font-bold text-dark mb-3 text-lg">Acolhimento e Escuta</h3>
+              <p className="text-gray-600 text-sm">
+                Respeito ao momento de cada profissional e valorização do processo contínuo de aprendizagem
+              </p>
             </div>
           </div>
 
-          {/* CTA Final Impactante */}
-          <div className="text-center">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl border border-gray-200">
-              <h3 className="text-3xl md:text-4xl font-bold text-dark mb-6">
-                Vamos começar sua transformação?
+          {/* Abordagem Detalhada */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h3 className="text-2xl font-bold text-dark mb-6">
+                O que você encontra na mentoria:
               </h3>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Agende uma conversa sem compromisso e descubra como a mentoria 
-                pode acelerar sua carreira na neuropsicopedagogia
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={() => scrollToSection('contato')}
-                  className="btn-primary text-lg px-8 py-4 cursor-pointer shadow-lg hover:shadow-xl"
-                >
-                  Agendar Conversa Inicial
-                </button>
-                <button
-                  onClick={() => scrollToSection('servicos')}
-                  className="btn-secondary text-lg px-8 py-4 cursor-pointer shadow-lg hover:shadow-xl"
-                >
-                  Ver Planos Disponíveis
-                </button>
+              
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <FaBrain className="text-primary text-lg" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-dark mb-2">Base Científica Robusta</h4>
+                    <p className="text-gray-600 text-sm">
+                      Fundamentação em Neuropsicopedagogia, Análise do Comportamento Aplicada (ABA) 
+                      e estudos sobre Funções Executivas e Transtornos do Neurodesenvolvimento
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                    <FaGraduationCap className="text-secondary text-lg" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-dark mb-2">Prática Reflexiva</h4>
+                    <p className="text-gray-600 text-sm">
+                      Análise crítica das escolhas clínicas e desenvolvimento da capacidade 
+                      de transformar teoria em intervenções eficazes e personalizadas
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <FaTools className="text-primary text-lg" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-dark mb-2">Instrumentos Práticos</h4>
+                    <p className="text-gray-600 text-sm">
+                      Modelos de anamnese, contrato, instrumentos avaliativos e relatórios 
+                      que podem ser adaptados à realidade de cada atendimento
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-500 text-sm mt-6">
-                ⚡ Sem custo • Sem compromisso • 20 minutos
+            </div>
+
+            <div className="bg-dark rounded-2xl p-8 text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <FaHandshake className="text-2xl text-secondary" />
+                <h3 className="text-xl font-bold text-white">Meu Compromisso</h3>
+              </div>
+              
+              <p className="text-white/90 leading-relaxed mb-6">
+                Em cada mentoria, meu compromisso é te conduzir por um caminho possível, 
+                ético e embasado, fortalecendo tua prática e tua confiança como profissional da área.
               </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span className="text-white/80 text-sm">Caminho possível e estruturado</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span className="text-white/80 text-sm">Abordagem ética e embasada cientificamente</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span className="text-white/80 text-sm">Fortalecimento da prática profissional</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span className="text-white/80 text-sm">Desenvolvimento da confiança clínica</span>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-white/10 rounded-lg">
+                <p className="text-white/80 text-sm italic">
+                  "Conduzindo profissionais por um caminho possível, ético e embasado, 
+                  fortalecendo a prática e a confiança na atuação profissional."
+                </p>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
