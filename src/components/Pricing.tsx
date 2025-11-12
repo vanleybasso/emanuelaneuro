@@ -26,13 +26,32 @@ const Pricing: React.FC = () => {
           {/* Card de Preço Centralizado */}
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-dark mb-4">Mentoria Completa</h3>
-              <div className="flex justify-center items-baseline gap-2 mb-4">
-                <span className="text-4xl md:text-5xl font-bold text-primary">R$ 790</span>
-                <span className="text-gray-500 text-lg">,00</span>
+              <h3 className="text-2xl md:text-3xl font-bold text-dark mb-6">Mentoria Completa</h3>
+              
+              {/* Valor à vista */}
+              <div className="mb-6">
+                <div className="flex justify-center items-baseline gap-2 mb-2">
+                  <span className="text-3xl md:text-4xl font-bold text-primary">R$ 790</span>
+                  <span className="text-gray-500 text-lg">,00</span>
+                </div>
+                <p className="text-gray-600 font-medium">à vista</p>
               </div>
-              <p className="text-gray-600 mb-2 text-lg">ou 3x de R$ 310,00</p>
-              <p className="text-sm text-gray-500">Pagamento à vista no pacote completo</p>
+
+              {/* Divisor */}
+              <div className="flex items-center justify-center mb-6">
+                <div className="flex-1 h-px bg-gray-300"></div>
+                <span className="px-4 text-gray-500 text-sm">ou</span>
+                <div className="flex-1 h-px bg-gray-300"></div>
+              </div>
+
+              {/* Valor parcelado */}
+              <div className="mb-6">
+                <div className="flex justify-center items-baseline gap-2 mb-2">
+                  <span className="text-2xl md:text-3xl font-bold text-secondary">3x de R$ 310</span>
+                  <span className="text-gray-500">,00</span>
+                </div>
+                <p className="text-gray-600 font-medium">no cartão de crédito</p>
+              </div>
             </div>
 
             <div className="space-y-4 mb-8">
