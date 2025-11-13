@@ -1,7 +1,14 @@
 import React from 'react';
-import { FaBrain, FaGraduationCap, FaHeart, FaLightbulb, FaUserGraduate, FaChalkboardTeacher, FaUserFriends, FaUsers } from 'react-icons/fa';
+import { FaBrain, FaGraduationCap, FaHeart, FaLightbulb, FaUserGraduate, FaChalkboardTeacher, FaUserFriends, FaUsers, FaArrowRight } from 'react-icons/fa';
 
 const About: React.FC = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="sobre" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -83,8 +90,8 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Público-alvo - AGORA ESTÁ DE VOLTA! */}
-          <div className="bg-dark rounded-2xl p-8 text-white">
+          {/* Público-alvo */}
+          <div className="bg-dark rounded-2xl p-8 text-white mb-12">
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">
                 Para quem é a mentoria?
@@ -132,6 +139,17 @@ const About: React.FC = () => {
                 <p className="text-white/80 text-sm">Estudantes de especialização</p>
               </div>
             </div>
+          </div>
+
+          {/* Call to Action - Fora do background escuro */}
+          <div className="text-center">
+            <button
+              onClick={() => scrollToSection('investimento')}
+              className="bg-secondary hover:bg-secondary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer inline-flex items-center gap-3 text-lg"
+            >
+              Quero Começar Agora
+              <FaArrowRight className="text-sm" />
+            </button>
           </div>
         </div>
       </div>

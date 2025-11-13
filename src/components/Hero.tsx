@@ -35,13 +35,13 @@ const Hero: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-start">
               <button
-                onClick={() => scrollToSection('contato')}
+                onClick={() => scrollToSection('investimento')}
                 className="btn-primary text-base shadow-lg hover:shadow-xl w-full sm:w-auto cursor-pointer"
               >
                 Iniciar Minha Jornada
               </button>
               <button
-                onClick={() => scrollToSection('servicos')}
+                onClick={() => scrollToSection('metodologia')}
                 className="btn-secondary text-base shadow-lg hover:shadow-xl w-full sm:w-auto cursor-pointer"
               >
                 Conhecer a Metodologia

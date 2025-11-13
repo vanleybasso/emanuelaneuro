@@ -1,7 +1,14 @@
 import React from 'react';
-import { FaWhatsapp, FaCheck, FaUsers, FaChartLine, FaFileAlt, FaHandHoldingHeart } from 'react-icons/fa';
+import { FaWhatsapp, FaCheck, FaUsers, FaChartLine, FaFileAlt, FaHandHoldingHeart, FaArrowRight } from 'react-icons/fa';
 
 const HowWeWork: React.FC = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="como-trabalhamos" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -94,7 +101,7 @@ const HowWeWork: React.FC = () => {
           </div>
 
           {/* Acompanhamento WhatsApp */}
-          <div className="bg-dark rounded-2xl p-8 md:p-12 text-white">
+          <div className="bg-dark rounded-2xl p-8 md:p-12 text-white mb-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="flex items-center gap-4 mb-6">
@@ -140,6 +147,17 @@ const HowWeWork: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <button
+              onClick={() => scrollToSection('investimento')}
+              className="bg-secondary hover:bg-secondary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer inline-flex items-center gap-3 text-lg"
+            >
+              Quero Começar Agora
+              <FaArrowRight className="text-sm" />
+            </button>
           </div>
         </div>
       </div>

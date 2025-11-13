@@ -2,15 +2,11 @@ import React from 'react';
 import { 
   FaInstagram, 
   FaLinkedin, 
-  FaFacebook, 
-  FaYoutube, 
-  FaHeart, 
-  FaBrain,
-  FaEnvelope,
   FaWhatsapp,
-  FaClock,
+  FaEnvelope,
   FaMapMarkerAlt
 } from 'react-icons/fa';
+import logo from '/3.png'; // ajuste o caminho se necessário
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -24,14 +20,19 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-dark text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-3 gap-12 text-center md:text-left justify-items-center">
+          
           {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <FaBrain className="text-secondary text-2xl" />
+          <div className="md:col-span-1 max-w-sm">
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+              <img 
+                src={logo} 
+                alt="Logo Emanuela Schmidt" 
+                className="w-14 h-14 object-contain rounded-full"
+              />
               <h3 className="text-2xl font-bold text-white">
-                NeuroMentoria
+                Emanuela Schmidt
               </h3>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
@@ -39,103 +40,83 @@ const Footer: React.FC = () => {
               que transformam práticas profissionais através do conhecimento 
               neurocientífico aplicado à educação.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-secondary transition-colors p-2 bg-white/5 rounded-lg">
+            <div className="flex justify-center md:justify-start space-x-4">
+              <a 
+                href="https://www.instagram.com/emanuela.schmidt.neuropp" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#c9b28d] transition-colors p-2 bg-white/5 rounded-lg"
+              >
                 <FaInstagram className="text-lg" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-secondary transition-colors p-2 bg-white/5 rounded-lg">
+              <a 
+                href="https://www.linkedin.com/in/emanuela-schmidt-alves-4713361b2/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#c9b28d] transition-colors p-2 bg-white/5 rounded-lg"
+              >
                 <FaLinkedin className="text-lg" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-secondary transition-colors p-2 bg-white/5 rounded-lg">
-                <FaFacebook className="text-lg" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-secondary transition-colors p-2 bg-white/5 rounded-lg">
-                <FaYoutube className="text-lg" />
+              <a 
+                href="https://wa.me/5554991217031" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#c9b28d] transition-colors p-2 bg-white/5 rounded-lg"
+              >
+                <FaWhatsapp className="text-lg" />
               </a>
             </div>
           </div>
 
-          {/* Links Rápidos */}
-          <div>
+          {/* Navegação */}
+          <div className="max-w-xs">
             <h4 className="text-lg font-semibold mb-4 text-white">Navegação</h4>
             <ul className="space-y-3">
-              <li>
-                <button
-                  onClick={() => scrollToSection('inicio')}
-                  className="text-gray-400 hover:text-secondary cursor-pointer transition-colors text-left"
-                >
-                  Início
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('sobre')}
-                  className="text-gray-400 hover:text-secondary cursor-pointer transition-colors text-left"
-                >
-                  Sobre
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('servicos')}
-                  className="text-gray-400 hover:text-secondary cursor-pointer transition-colors text-left"
-                >
-                  Serviços
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('contato')}
-                  className="text-gray-400 hover:text-secondary cursor-pointer transition-colors text-left"
-                >
-                  Contato
-                </button>
-              </li>
+              {[
+                { label: 'Início', id: 'inicio' },
+                { label: 'Sobre', id: 'sobre' },
+                { label: 'Metodologia', id: 'metodologia' },
+                { label: 'Planos', id: 'investimento' },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-gray-400 hover:text-[#c9b28d] cursor-pointer transition-colors text-left"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Serviços */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Nossos Serviços</h4>
-            <ul className="space-y-3 text-gray-400">
-              <li className="hover:text-secondary transition-colors cursor-pointer">Mentoria Individual</li>
-              <li className="hover:text-secondary transition-colors cursor-pointer">Mentoria em Grupo</li>
-              <li className="hover:text-secondary transition-colors cursor-pointer">Workshops Temáticos</li>
-              <li className="hover:text-secondary transition-colors cursor-pointer">Supervisão de Casos</li>
-              <li className="hover:text-secondary transition-colors cursor-pointer">Formação Continuada</li>
-            </ul>
-          </div>
-
-          {/* Contato Footer */}
-          <div>
+          {/* Contato */}
+          <div className="max-w-xs">
             <h4 className="text-lg font-semibold mb-4 text-white">Contato</h4>
             <ul className="space-y-3 text-gray-400">
-              <li className="flex items-center gap-2">
-                <FaEnvelope className="text-secondary text-sm" />
-                contato@neuromentoria.com
+              <li className="flex justify-center md:justify-start items-center gap-2">
+                <FaEnvelope className="text-[#c9b28d] text-sm" />
+                emanuelaschmdt@gmail.com
               </li>
-              <li className="flex items-center gap-2">
-                <FaWhatsapp className="text-secondary text-sm" />
-                (11) 99999-9999
+              <li className="flex justify-center md:justify-start items-center gap-2">
+                <FaWhatsapp className="text-[#c9b28d] text-sm" />
+                (54) 99121-7031
               </li>
-              <li className="flex items-center gap-2">
-                <FaClock className="text-secondary text-sm" />
-                Segunda a Sexta: 8h-18h
-              </li>
-              <li className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-secondary text-sm" />
+              <li className="flex justify-center md:justify-start items-center gap-2">
+                <FaMapMarkerAlt className="text-[#c9b28d] text-sm" />
                 Atendimento 100% Online
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        {/* Linha inferior */}
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} NeuroMentoria. Todos os direitos reservados.
+            © {currentYear} Emanuela Schmidt. Todos os direitos reservados.
           </p>
           <div className="flex items-center text-gray-400 text-sm">
-            Feito com <FaHeart className="text-secondary mx-1" /> para transformar vidas através da educação
+            Feito com carinho para transformar vidas através da educação
           </div>
         </div>
       </div>

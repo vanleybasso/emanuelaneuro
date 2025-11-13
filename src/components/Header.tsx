@@ -45,35 +45,44 @@ const Header: React.FC = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button
-              onClick={() => scrollToSection('servicos')}
+              onClick={() => scrollToSection('metodologia')}
               className="text-dark hover:text-secondary cursor-pointer transition-all duration-300 font-medium relative group"
             >
-              Serviços
+              Metodologia
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button
-              onClick={() => scrollToSection('contato')}
+              onClick={() => scrollToSection('investimento')}
               className="text-dark hover:text-secondary cursor-pointer transition-all duration-300 font-medium relative group"
             >
-              Contato
+              Planos
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
             </button>
           </div>
 
-          {/* Botão Mobile */}
+          {/* Botão Mobile - Alterna entre Hamburger e X */}
           <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <div className="space-y-1">
-              <div className="w-6 h-0.5 bg-dark"></div>
-              <div className="w-6 h-0.5 bg-dark"></div>
-              <div className="w-6 h-0.5 bg-dark"></div>
-            </div>
+            {isMenuOpen ? (
+              // Ícone X quando o menu está aberto
+              <div className="relative w-6 h-6">
+                <div className="absolute top-1/2 left-0 w-6 h-0.5 bg-dark transform -rotate-45"></div>
+                <div className="absolute top-1/2 left-0 w-6 h-0.5 bg-dark transform rotate-45"></div>
+              </div>
+            ) : (
+              // Ícone Hamburger quando o menu está fechado
+              <div className="space-y-1">
+                <div className="w-6 h-0.5 bg-dark"></div>
+                <div className="w-6 h-0.5 bg-dark"></div>
+                <div className="w-6 h-0.5 bg-dark"></div>
+              </div>
+            )}
           </button>
         </div>
 
-        {/* Menu Mobile */}
+        {/* Menu Mobile - Mantendo o mesmo estilo */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-4 pb-4 bg-white rounded-lg p-4 shadow-lg">
             <button
@@ -89,16 +98,16 @@ const Header: React.FC = () => {
               Sobre
             </button>
             <button
-              onClick={() => scrollToSection('servicos')}
+              onClick={() => scrollToSection('metodologia')}
               className="block text-dark hover:text-secondary cursor-pointer w-full text-left py-2 font-medium transition-colors border-b border-gray-100 hover:border-secondary"
             >
-              Serviços
+              Metodologia
             </button>
             <button
-              onClick={() => scrollToSection('contato')}
+              onClick={() => scrollToSection('investimento')}
               className="block text-dark hover:text-secondary cursor-pointer w-full text-left py-2 font-medium transition-colors"
             >
-              Contato
+              Planos
             </button>
           </div>
         )}
